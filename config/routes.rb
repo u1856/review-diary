@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  get 'reviews/index'
-  root to: "reviews#index"
+  devise_for :users
+  #get 'reviews/index'
+  root "reviews#index"
+
+  resources :reviews
+
 end

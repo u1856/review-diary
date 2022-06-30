@@ -3,10 +3,13 @@ Rails.application.routes.draw do
 
   root "movies#index"
 
-  resources :movies
+  resources :movies do
+    resources :reviews, only: :create
+  end
 
   namespace :admin do
     resources :movies, only: [:new, :create, :edit, :destroy]
   end
+  
 
 end

@@ -132,7 +132,7 @@
       <li class='list'>
         <%= link_to review_path(review.id) do %>
         <div class='item-img-content'>
-          <%= image_tag review.image, class: "item-img" %>
+          <%= image_tag review.image, class: "item-img" if review.image.attached?  %>
 
 
         </div>
@@ -142,7 +142,7 @@
           </h3>
           
           <div class='item-price'>
-            <span><%= item.price %>円<br><%= item.delivery_charge.name %></span>
+          
             <div class='star-btn'>
               <%= image_tag "star.png", class:"star-icon" %>
               <span class='star-count'>0</span>

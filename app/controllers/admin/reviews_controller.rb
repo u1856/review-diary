@@ -1,6 +1,10 @@
 class Admin::ReviewsController < ApplicationController
   before_action :if_not_admin
 
+  def new
+
+  end
+
 
 
   private

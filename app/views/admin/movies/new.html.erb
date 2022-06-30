@@ -5,7 +5,7 @@
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">作品の情報を入力</h2>
-    <%= form_with model: [:admin, @review], local: true do |f| %>
+    <%= form_with model: [:admin, @movie], local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
 
@@ -35,7 +35,7 @@
           概要
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :text, class:"items-text", id:"item-info", placeholder:"映画の概要（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :summary, class:"items-text", id:"item-info", placeholder:"映画の概要（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
     <%# /映画タイトルと概要 %>

@@ -7,11 +7,10 @@ class Admin::ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    if @review.valid?
-      @review.save
+    if @review.save
       redirect_to root_path
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -23,7 +22,7 @@ class Admin::ReviewsController < ApplicationController
     redirect_to root_path unless current_user.admin?
   end
 
-  def post_params
+  def review_params
     params.require(:review).permit(:movie, :summary, :category_id).merge(user_id: current_user.id)
   end
 

@@ -29,7 +29,7 @@
         映画タイトル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :name, class:"items-text", id:"item-name", placeholder:"映画タイトル", maxlength:"40" %>
+      <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"映画タイトル", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           概要
@@ -48,10 +48,9 @@
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
-        <%#<%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
         <div class="weight-bold-text">
           公開日
-          <span class="indispensable">必須</span>
         </div>
         <%#<%= f.collection_select(:situation_id, Situation.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
       </div>

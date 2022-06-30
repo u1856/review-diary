@@ -122,7 +122,7 @@
 
   <%# 商品一覧 %>
   <div class='item-contents'>
-    <h2 class='title'>ピックアップカテゴリー</h2>
+    <h2 class='title'>映画作品一覧</h2>
     <div class="subtitle" >
       新規投稿商品
     </div>
@@ -182,8 +182,10 @@
   </div>
   <%# /商品一覧 %>
 </div>
-<%= link_to(new_admin_review_path, class: 'purchase-btn') do %>
-  <span class='purchase-btn-text'>投稿する</span>
-  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% if user_signed_in? && current_user.admin? %>
+  <%= link_to(new_admin_review_path, class: 'purchase-btn') do %>
+    <span class='purchase-btn-text'>投稿する</span>
+    <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  <% end %>
 <% end %>
 <%= render "shared/footer" %>

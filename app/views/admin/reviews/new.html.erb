@@ -1,4 +1,4 @@
-<h1>メモ投稿ページ<h1>
+<h1>作品投稿ページ<h1>
 <%= form_with url: admin_reviews_path, model: @review, local: true do |form| %>
   <%= form.text_area :text, placeholder: "text", rows: "5", cols: "30" %>
   <%= form.submit "投稿する" %>

@@ -1,7 +1,10 @@
 class ReviewsController < ApplicationController
   def create
-    Review.create(review_params)
-    redirect_to "/movies/#{review.movie.id}"
+    @review = Review.new(review_params)
+    @movie = Movie.find(params[:movie_id])
+    if @review.save
+      ReviewChannel.broadcast_to @movie, { title: @review, text: @review, rate: @review, user: @review.user }
+    end
   end
 
   private

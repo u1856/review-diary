@@ -59,25 +59,33 @@
   <%# /映画の概要 %>
 
   <%# レビュー %>
-  <div class="container">
-    <% if user_signed_in? %>
-      <%= form_with(model: [@movie, @review], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
-        <%= form.submit "SEND" %>
-      <% end %>
-    <% else %>
-      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
-    <% end %>
 
-    <div class="reviews">
-      <h4>＜コメント一覧＞</h4>
-      <% @reviews.each do |review| %>
-        <p>
-          <strong><%= link_to review.user.name, "/users/#{review.user_id}" %>：</strong>
-          <%= review.text %>
-        </p>
+  <div class="container">
+    <div class="review-form">
+      <% if user_signed_in? %>
+        <%= form_with(model: [@movie, @review], local: true, id: "review-form") do |form| %>
+          <%= form.text_area :text, placeholder: "レビューする", rows: "2" %>
+          <%= form.submit "投稿する", class: "review-submit" %>
+        <% end %>
+      <% else %>
+        <strong><p>※※※ レビューの投稿には新規登録/ログインが必要です ※※※</p></strong>
       <% end %>
     </div>
+
+  <div id="reviews">
+   
+      <h4>＜レビュー＞</h4>
+      <% @movie.reviews.each do |review| %>
+        <div class="review">
+          <p>
+            <strong><%= link_to review.user.name, "/users/#{review.user_id}" %>：</strong>
+            <%= review.text %>
+          </p>
+        </div>
+      <% end %>
+
+    </div>
+
   </div>
  
   <%# /レビュー %>

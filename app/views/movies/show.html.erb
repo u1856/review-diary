@@ -60,19 +60,26 @@
 
   <%# レビュー %>
 
-  <div class="container">
-    <div class="review-form">
+  <div class="review-container">
+
+  <%= link_to(new_movie_review_path(@movie.id), class: 'new-review-btn') do %>
+    <span class='purchase-btn-text'>レビューを投稿する</span>
+  <% end %>
+
+  <div class="review-form">
       <% if user_signed_in? %>
         <%= form_with(model: [@movie, @review], local: true, id: "review-form") do |form| %>
-          <%= form.text_area :text, placeholder: "レビューする", rows: "2" %>
+          <%= form.text_area :title, placeholder: "タイトル", rows: "1" %>
+          <%= form.text_area :text, placeholder: "レビューする", rows: "5" %>
           <%= form.submit "投稿する", class: "review-submit" %>
         <% end %>
       <% else %>
         <strong><p>※※※ レビューの投稿には新規登録/ログインが必要です ※※※</p></strong>
       <% end %>
-    </div>
+</div>
+    
 
-  <div id="reviews">
+    <div id="reviews">
    
       <h4>＜レビュー＞</h4>
       <% @movie.reviews.each do |review| %>

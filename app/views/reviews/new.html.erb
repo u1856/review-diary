@@ -1,0 +1,15 @@
+
+<div class="new-review-container">
+  <div class="review-form">
+    <div class="head">
+      <h2>レビュー新規投稿</h2>
+    </div>
+      
+        <%= form_with(model: [@movie, @review], url: movie_reviews_path, local: true, id: "review-form") do |form| %>
+          <%= form.text_area :title, placeholder: "タイトル", rows: "1", class: "new-review-title" %>
+          <%= form.text_area :text, placeholder: "レビューする", rows: "5", class: "new-review-text" %>
+          <%= form.submit "投稿する", class: "new-review-submit" %>
+        <% end %>
+     
+  </div>
+</div>

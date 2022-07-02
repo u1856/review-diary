@@ -4,7 +4,14 @@ class ReviewsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
     if @review.save
       ReviewChannel.broadcast_to @movie, { title: @review, text: @review, rate: @review, user: @review.user }
+      redirect_to movie_path(@movie.id)
+    else
+      render :new
     end
+  end
+
+  def new
+    @review = Review.new
   end
 
   private

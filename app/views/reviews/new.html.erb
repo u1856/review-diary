@@ -4,12 +4,24 @@
     <div class="head">
       <h2>レビュー新規投稿</h2>
     </div>
-      
+      <div class = "new-reviews">
         <%= form_with(model: [@movie, @review], url: movie_reviews_path, local: true, id: "review-form") do |form| %>
+          <div class="weight-bold-text">
+          タイトル
+          <span class="indispensable">必須</span>
+          </div>
           <%= form.text_area :title, placeholder: "タイトル", rows: "1", class: "new-review-title" %>
+
+           <div class="weight-bold-text">
+          レビュー
+          <span class="indispensable">必須</span>
+          </div>
           <%= form.text_area :text, placeholder: "レビューする", rows: "5", class: "new-review-text" %>
+
           <%= form.submit "投稿する", class: "new-review-submit" %>
+          <%= link_to 'もどる', root_path, class:"back-btn" %>
+          
         <% end %>
-     
+      </div>
   </div>
 </div>

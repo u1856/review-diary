@@ -1,10 +1,10 @@
-<div class="items-sell-contents">
-  <header class="items-sell-header">
+<div class="movies-sell-contents">
+  <header class="movies-sell-header">
     <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
 
   </header>
-  <div class="items-sell-main">
-    <h2 class="items-sell-title">作品の情報を入力</h2>
+  <div class="movies-sell-main">
+    <h2 class="movies-sell-title">作品の情報を入力</h2>
     <%= form_with model: [:admin, @movie], local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -19,7 +19,7 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image, id:"movie-image" %>
       </div>
     </div>
     <%# /作品画像 %>
@@ -29,20 +29,19 @@
         映画タイトル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"映画タイトル", maxlength:"40" %>
+      <%= f.text_area :title, class:"new-movie-title", id:"new-movie-title", placeholder:"映画タイトル", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           概要
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :summary, class:"items-text", id:"item-info", placeholder:"映画の概要（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :summary, class:"new-movie-summary", id:"new-movie-summary", placeholder:"映画の概要（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
     <%# /映画タイトルと概要 %>
 
     <%# 映画の詳細 %>
     <div class="items-detail">
-      <div class="weight-bold-text">詳細</div>
       <div class="form">
         <div class="weight-bold-text">
           カテゴリー
@@ -54,15 +53,15 @@
     <%# /映画の詳細 %>
 
     <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "投稿する" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    <div class="new-movie-submit-contents">
+      <div><%= f.submit "投稿する" ,class:"new-movie-submit" %></div>
+      <%= link_to 'もどる', root_path, class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>
   <% end %>
 
-  <footer class="items-sell-footer">
+  <footer class="movies-sell-footer">
     <ul class="menu">
       <li><a href="#">プライバシーポリシー</a></li>
       <li><a href="#">Review Diary利用規約</a></li>

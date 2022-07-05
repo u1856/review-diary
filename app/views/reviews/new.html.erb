@@ -6,6 +6,7 @@
     </div>
       <div class = "new-reviews">
         <%= form_with(model: [@movie, @review], url: movie_reviews_path, local: true, id: "review-form") do |form| %>
+        
           <div class="weight-bold-text">
           タイトル
           <span class="indispensable">必須</span>
@@ -20,7 +21,7 @@
 
           <%= form.submit "投稿する", class: "new-review-submit" %>
           <%= link_to 'もどる', root_path, class:"back-btn" %>
-          
+
         <% end %>
       </div>
   </div>

@@ -8,6 +8,7 @@ class MoviesController < ApplicationController
   def show
     @review = Review.new
     @reviews = @movie.reviews.includes(:user)
+    @reviews = @movie.reviews
   end
 
   private 

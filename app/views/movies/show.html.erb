@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
 <%# 映画の概要 %>
-<div class="item-show">
+<div class="review-show">
   <div class="item-box">
     <h2 class="name">
       <%= @movie.title %>
@@ -58,6 +58,13 @@
   </div>
   <%# /映画の概要 %>
 
+   <%# 星評価の平均点 %>
+    <div class="star-rating mb-2">
+      <div class="star-rating-front" style="width: <%= @movie.review_rate_percentage %>%">★★★★★</div>
+       <%= @movie.avg_rate %>点
+    </div>
+   <%# 星評価の平均点 %>
+
   <%# レビュー %>
 
   <div class="review-container">
@@ -69,24 +76,31 @@
    <% else %>
     <strong><p>※※※ レビューの投稿には新規登録/ログインが必要です ※※※</p></strong>
    <% end %>
-
-  
     
 
     <div id="reviews">
+      
    
-      <h4>＜レビュー＞</h4>
+      <h4>＜レビュー＞</h4>（<%= @movie.reviews.count %>件のレビュー）
       <% @movie.reviews.each do |review| %>
         <div class="review">
           <p>
             <strong><%= link_to review.user.name, "/users/#{review.user_id}" %>：</strong>
+            <%= review.title %>
             <%= review.text %>
+            <%= review.rate %> 
+            <div class="star-rating mb-2">
+              <div class="star-rating-front" style="width: <%= @movie.review_rate_percentage %>%">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div> <%= @movie.avg_rate %>点
+              
+            </div>
+            <div class="average-score-display ml-3 pt-2">
+             
+            </div>   
           </p>
         </div>
       <% end %>
-
     </div>
-
   </div>
  
   <%# /レビュー %>

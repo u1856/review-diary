@@ -1,6 +1,6 @@
 class ReviewChannel < ApplicationCable::Channel
   def subscribed
-    @review = Revire.find(params[:movie_id]) 
+    @review = Review.find(params[:movie_id]) 
     stream_for @movie 
   end
 

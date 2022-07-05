@@ -1,6 +1,6 @@
 /* 商品の概要 */
 
-.item-show {
+.review-show {
   background-color: #f8f8f8;
   width: 100vw;
   display: flex;
@@ -202,4 +202,29 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 23px;
+}
+
+/* レビューの一覧 */
+.star-rating {
+  position: relative;
+  width: 5em;
+  height: 1em;
+  font-size: 25px;
+}
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+}
+.star-rating-back {
+  color: #ccc;
+}
+
+.average-score {
+  display: flex;
+}
+.average-score-display {
+  font-size: 16px;
 }

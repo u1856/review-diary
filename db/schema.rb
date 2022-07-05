@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2022_06_30_143833) do
     t.integer "movie_id"
     t.text "title"
     t.text "text"
-    t.float "rate"
+    t.integer "rate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

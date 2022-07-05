@@ -5,7 +5,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.integer :movie_id
       t.text :title
       t.text :text
-      t.float :rate
+      t.integer :rate
       t.timestamps
     end
   end

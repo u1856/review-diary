@@ -204,6 +204,20 @@
   font-size: 23px;
 }
 
+/* レビューを投稿するボタン */
+.purchase-btn-review{
+  background-image: linear-gradient(135deg, #008aff, #86d472);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: block;
+  height: 50px;
+  font-size: 1.4em;
+  font-weight: 600;
+  padding: 4px;
+  margin-top: 30px;
+}
+
 /* レビューの一覧 */
 .star-rating {
   position: relative;
@@ -211,6 +225,7 @@
   height: 1em;
   font-size: 25px;
 }
+
 .star-rating-front {
   position: absolute;
   top: 0;
@@ -218,6 +233,11 @@
   overflow: hidden;
   color: #ffcc33;
 }
+
+.star-rating-score{
+  margin-left: 150px;
+}
+
 .star-rating-back {
   color: #ccc;
 }
@@ -227,4 +247,12 @@
 }
 .average-score-display {
   font-size: 16px;
+}
+
+.review{
+  margin: 20px;
+}
+
+.review p{
+  margin: 20px;
 }

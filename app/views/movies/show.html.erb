@@ -61,7 +61,7 @@
    <%# 星評価の平均点 %>
     <div class="star-rating mb-2">
       <div class="star-rating-front" style="width: <%= @movie.review_rate_percentage %>%">★★★★★</div>
-       <%= @movie.avg_rate %>点
+       <div class="star-rating-score"><%= @movie.avg_rate %>点</div>
     </div>
    <%# 星評価の平均点 %>
 
@@ -71,7 +71,7 @@
 
   <% if user_signed_in? %>
     <%= link_to(new_movie_review_path(@movie.id), class: 'new-review-btn') do %>
-      <span class='purchase-btn-text'>レビューを投稿する</span>
+      <span class='purchase-btn-review'>レビューを投稿する</span>
     <% end %>
    <% else %>
     <strong><p>※※※ レビューの投稿には新規登録/ログインが必要です ※※※</p></strong>

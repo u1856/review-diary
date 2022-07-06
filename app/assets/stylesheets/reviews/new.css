@@ -65,6 +65,10 @@ h2 {
 
 /* 星評価 */
 
+.rating-box{
+  margin-left: 250px;
+}
+
 .rating-box .ratings .fa{
   font-size: 30px;
   color:#ffcc00;
@@ -74,6 +78,7 @@ h2 {
 .main-rating {
   display: flex;
 }
+
 
 .rating-value-display {
   font-size: 20px;

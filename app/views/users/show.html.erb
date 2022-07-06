@@ -1,0 +1,10 @@
+<div class="contents row">
+  <p><%= @name %>さんのレビュー投稿一覧</p>
+  <% @reviews.each do |review| %>
+    <div class="content_post">
+      <p><%= review.title %></p>
+      <p><%= review.rate %></p>
+      ><%= review.text %>
+    </div>
+  <% end %>
+</div>

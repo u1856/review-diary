@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root "movies#index"
+  root "reviews#index"
 
-  resources :movies do
-    resources :reviews, only: [:create, :new]
-  end
+  resources :reviews
 
   namespace :admin do
-    resources :movies, only: [:new, :create, :edit, :destroy]
+    resources :reviews, only: [:new, :create, :edit, :destroy]
   end
-  
 
 end

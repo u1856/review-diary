@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root "movies#index"
 
-  resources :users, only: :show
+  resources :users, only: [:show]
 
   resources :movies do
     resources :reviews, only: [:create, :new ,:edit]

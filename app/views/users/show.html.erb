@@ -1,10 +1,21 @@
 <div class="contents row">
   <p><%= @name %>さんのレビュー投稿一覧</p>
-  <% @reviews.each do |review| %>
-    <div class="content_post">
-      <p><%= review.title %></p>
-      <p><%= review.rate %></p>
-      ><%= review.text %>
-    </div>
-  <% end %>
+
+    <% @reviews.each do |review| %>
+      <div class="mypage-box">
+        <div class="mypage_rate">
+        <div class="star-rating">
+   
+       
+
+
+          <div class="star-rating-front" style="width: <% @reviews.average(:rate).round(1).to_f*100/5 %>%">★★★★★</div>
+          <div class="star-rating-back">★★★★★</div>
+           </div>
+        </div>
+          
+          <p><%= review.title %></p>
+          <p><%= review.text %></p>
+        </div>
+    <% end %>
 </div>

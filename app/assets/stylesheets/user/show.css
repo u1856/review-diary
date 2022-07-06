@@ -1,0 +1,43 @@
+.mypage-box{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #FF6B6B;/*文字色*/
+  background: #FFF;
+  border: solid 3px #FF6B6B;/*線*/
+  border-radius: 10px;/*角の丸み*/
+  width: 50%;
+  margin: 25px auto;
+  
+}
+
+.mypage-box p{
+  padding: 15px;
+}
+
+.star-rating {
+  position: relative;
+  width: 5em;
+  height: 1em;
+  font-size: 25px;
+}
+
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+  white-space: nowrap;
+}
+
+.star-rating-score{
+  margin-left: 150px;
+}
+
+.star-rating-back {
+  color: #ccc;
+}
+
+
+

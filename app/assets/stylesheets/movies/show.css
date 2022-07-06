@@ -232,6 +232,7 @@
   left: 0;
   overflow: hidden;
   color: #ffcc33;
+  white-space: nowrap;
 }
 
 .star-rating-score{

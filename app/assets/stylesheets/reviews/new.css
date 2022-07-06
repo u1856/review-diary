@@ -1,0 +1,86 @@
+/* レビュー新規投稿ページ */
+
+.new-review-container{
+  max-width:700px;
+  margin:0 auto;
+  text-align:center;
+  border-radius:6px;
+  background-color:#FAFAFA;
+}
+
+.head {
+  border-radius:6px 6px 0px 0px;
+  background-color:#FF6B6B;
+  color:#FAFAFA;
+}
+
+h2 {
+  text-align:center;
+  padding:18px 0 18px 0;
+  font-size: 1.4em;
+}
+
+.weight-bold-text {
+  font-weight: bold;
+  min-width: 170px;
+  margin-bottom: 10px;
+}
+
+.new-review-title{
+  margin:10px 0 20px 0;
+}
+
+.new-review-text{
+  height:100px;
+  margin:10px 0 30px 0;
+}
+
+.new-review-title, .new-review-text {
+  font-size: 1em;
+  padding: 15px 10px 10px;
+  font-family: 'Source Sans Pro',arial,sans-serif;
+  border: 1px solid #cecece;
+  background: #d7d7d7;
+  color:#FAFAFA;
+  border-radius: 5px;
+  background-clip: padding-box;
+  box-sizing: border-box;
+  width: 80%;
+  max-width: 600px;
+}
+
+.new-review-submit {
+  margin-top:15px;
+  margin-bottom:25px;
+  background-color:#FF6B6B;
+  padding: 12px 45px;
+  border-radius: 5px;
+  border: 1px solid #FF6B6B;
+  transition: .5s;
+  display: inline-block;
+  cursor: pointer;
+  width:30%;
+  color:#fff;
+}
+
+/* 星評価 */
+
+.rating-box{
+  margin-left: 250px;
+}
+
+.rating-box .ratings .fa{
+  font-size: 30px;
+  color:#ffcc00;
+  cursor: pointer;
+}
+
+.main-rating {
+  display: flex;
+}
+
+
+.rating-value-display {
+  font-size: 20px;
+}
+

@@ -1,7 +1,21 @@
-<div class="contents row">
-  <div class="container">
-    <h3>編集する</h3>
-    <div class = "new-reviews">
+<div class="new-review-container">
+
+<% if @review.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= review.errors.count %>件のエラーがあります。</h2>
+    <ul>
+      <% review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <div class="review-form">
+    <div class="head">
+      <h2>編集する</h2>
+    </div>
+      <div class = "new-reviews">
         <%= form_with(model: [@movie, @review], url: movie_reviews_path, local: true, id: "review-form") do |form| %>
         <div class="rating-box mt-3">
         <div class="main-rating">
@@ -30,10 +44,12 @@
           </div>
           <%= form.text_area :text, placeholder: "レビューする", rows: "5", class: "new-review-text" %>
 
-          <%= form.submit "投稿する", class: "new-review-submit" %>
+          <%= form.submit "編集する", class: "new-review-submit" %>
           <%= link_to 'もどる', root_path, class:"back-btn" %>
 
         <% end %>
       </div>
   </div>
 </div>
+
+<%= javascript_include_tag 'reviews.js' %>

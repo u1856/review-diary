@@ -1,18 +1,31 @@
 <div class="contents row">
   <p><%= @name %>さんのレビュー投稿一覧</p>
 
+ 
     <% @reviews.each do |review| %>
-      <div class="mypage-box">
-        <div class="mypage_rate">
-        <div class="star-rating">
-   
-          <div class="star-rating-front" style="width: <%= review.rate*100/5 %> %">★★★★★</div>
-          <div class="star-rating-back">★★★★★</div>
-           </div>
+      <div class="mypage-review">
+        <div class="mypage-box">
+          <div class="mypage_rate">
+            <div class="star-rating">
+    
+              <div class="star-rating-front" style="width: <%= review.rate*100/5 %> %">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div>
+            </div>
+          </div>
+            
+            <p><%= review.title %></p>
+            <p><%= review.text %></p>
+          </div>
+        <% if user_signed_in? %>
+        <% if current_user.id == review.user_id %>
+          <div class="review__manage">
+            <%= link_to "編集", edit_movie_review_path(review.id), method: :get, class: "mypage-pull-down" %>
+            <%= link_to "削除", movie_review_path(review.id), method: :delete, class:"mypage-pull-down" %>
+          </div>
+        <% end %>
+        <% end %>
         </div>
-          
-          <p><%= review.title %></p>
-          <p><%= review.text %></p>
-        </div>
+      </div>
     <% end %>
+
 </div>

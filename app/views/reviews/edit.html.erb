@@ -1,0 +1,39 @@
+<div class="contents row">
+  <div class="container">
+    <h3>編集する</h3>
+    <div class = "new-reviews">
+        <%= form_with(model: [@movie, @review], url: movie_reviews_path, local: true, id: "review-form") do |form| %>
+        <div class="rating-box mt-3">
+        <div class="main-rating">
+          <div class="ratings mb-3">
+            <span class="fa fa-star-o" id="star"></span>
+            <span class="fa fa-star-o" id="star"></span>
+            <span class="fa fa-star-o" id="star"></span>
+            <span class="fa fa-star-o" id="star"></span>
+            <span class="fa fa-star-o" id="star"></span>
+          </div>
+          <div class="ml-3 rating-value-display"><span id="rating-value-display">0</span>/5</div>
+        </div>
+          <%= form.hidden_field :movie_id, value: @movie %>
+          <%= form.hidden_field :rate, id: "rating-value" %>
+        </div>
+        
+          <div class="weight-bold-text">
+          タイトル
+          <span class="indispensable">必須</span>
+          </div>
+          <%= form.text_area :title, placeholder: "タイトル", rows: "1", class: "new-review-title" %>
+
+           <div class="weight-bold-text">
+          レビュー
+          <span class="indispensable">必須</span>
+          </div>
+          <%= form.text_area :text, placeholder: "レビューする", rows: "5", class: "new-review-text" %>
+
+          <%= form.submit "投稿する", class: "new-review-submit" %>
+          <%= link_to 'もどる', root_path, class:"back-btn" %>
+
+        <% end %>
+      </div>
+  </div>
+</div>

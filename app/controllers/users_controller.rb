@@ -4,8 +4,7 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @name = user.name
     @reviews = user.reviews
-    
-    @movie = Movie.all
   end
+  
 
 end

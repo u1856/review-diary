@@ -6,10 +6,7 @@
         <div class="mypage_rate">
         <div class="star-rating">
    
-       
-
-
-          <div class="star-rating-front" style="width: <% @reviews.average(:rate).round(1).to_f*100/5 %>%">★★★★★</div>
+          <div class="star-rating-front" style="width: <%= review.rate*100/5 %> %">★★★★★</div>
           <div class="star-rating-back">★★★★★</div>
            </div>
         </div>

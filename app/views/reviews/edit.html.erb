@@ -2,9 +2,9 @@
 
 <% if @review.errors.any? %>
   <div class="notification is-danger">
-    <h2><%= review.errors.count %>件のエラーがあります。</h2>
+    <h2><%= @review.errors.count %>件のエラーがあります。</h2>
     <ul>
-      <% review.errors.full_messages.each do |message| %>
+      <% @review.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
@@ -15,19 +15,20 @@
     <div class="head">
       <h2>編集する</h2>
     </div>
+
       <div class = "new-reviews">
-        <%= form_with(model: [@movie, @review], url: movie_reviews_path, local: true, id: "review-form") do |form| %>
+        <%= form_with(model: [@movie, @review], url: movie_review_path, local: true, id: "review-form") do |form| %>
         <div class="rating-box mt-3">
-        <div class="main-rating">
-          <div class="ratings mb-3">
-            <span class="fa fa-star-o" id="star"></span>
-            <span class="fa fa-star-o" id="star"></span>
-            <span class="fa fa-star-o" id="star"></span>
-            <span class="fa fa-star-o" id="star"></span>
-            <span class="fa fa-star-o" id="star"></span>
+          <div class="main-rating">
+            <div class="ratings mb-3">
+              <span class="fa fa-star-o" id="star"></span>
+              <span class="fa fa-star-o" id="star"></span>
+              <span class="fa fa-star-o" id="star"></span>
+              <span class="fa fa-star-o" id="star"></span>
+              <span class="fa fa-star-o" id="star"></span>
+            </div>
+            <div class="ml-3 rating-value-display"><span id="rating-value-display">0</span>/5</div>
           </div>
-          <div class="ml-3 rating-value-display"><span id="rating-value-display">0</span>/5</div>
-        </div>
           <%= form.hidden_field :movie_id, value: @movie %>
           <%= form.hidden_field :rate, id: "rating-value" %>
         </div>

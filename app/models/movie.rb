@@ -3,6 +3,7 @@ class Movie < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_many :reviews, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   has_one_attached :image
 
   def avg_rate

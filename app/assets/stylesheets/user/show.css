@@ -1,0 +1,78 @@
+.mypage-box{
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #FF6B6B;/*文字色*/
+  background: #FFF;
+  border: solid 3px #FF6B6B;/*線*/
+  border-radius: 10px;/*角の丸み*/
+  width: 50%;
+  margin: 25px auto;
+  
+}
+
+.mypage-box p{
+  padding: 15px;
+}
+
+.mypage-review{
+  position: relative;
+}
+
+/* 星評価 */
+
+
+.star-rating-after {
+  position: relative;
+  width: 5em;
+  height: 1em;
+  font-size: 25px;
+}
+
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  color: #ffcc33;
+  white-space: nowrap;
+}
+
+.star-rating-score{
+  margin-left: 150px;
+}
+
+.star-rating-back {
+  color: #ccc;
+}
+
+.review__manage{
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
+  position: absolute;
+  top: 20px;
+  right: 400px;
+}
+
+.mypage-pull-down{
+  display: block;
+  padding: 0.4em 1.6em;
+  font-size: 0.4em;
+  color: #999;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 4px;
+  width: 100px;
+}
+
+.mypage-pull-down:hover{
+  color: #fff;
+  background: #999;
+}
+
+
+

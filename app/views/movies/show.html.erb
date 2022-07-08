@@ -90,14 +90,15 @@
             <%= review.text %>
             <%= review.rate %> 
             <div class="star-rating mb-2">
-              <div class="star-rating-front" style="width: <%= @movie.review_rate_percentage %>%">★★★★★</div>
-              <div class="star-rating-back">★★★★★</div> <%= @movie.avg_rate %>点
+              <div class="star-rating-front" style="width: <%= review.rate*100/5 %>%">★★★★★</div>
+              <div class="star-rating-back">★★★★★</div> <%= review.rate %>点
               
             </div>
             <div class="average-score-display ml-3 pt-2">
              
             </div>   
           </p>
+          
         </div>
       <% end %>
     </div>

@@ -15,8 +15,8 @@
   align-items: center;
 }
 
-.furima-icon {
-  width: 10vw;
+.app-icon {
+  width: 15vw;
   margin-right: 10vw;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .search-form>.input-box {
-  width: 100%;
+  width: 25%;
   height: 5vh;
   padding-left: 10px;
 }
@@ -42,7 +42,7 @@
 }
 
 .search-icon {
-  width: 100%;
+  width: 80%;
 }
 
 .nav {
@@ -52,12 +52,6 @@
   flex-wrap: wrap;
   width: 100%;
   padding: 1vh 0;
-}
-
-.lists-left {
-  display: flex;
-  min-width: 200px;
-
 }
 
 .category-list {

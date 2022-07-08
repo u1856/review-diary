@@ -18,6 +18,25 @@ class ReviewsController < ApplicationController
     @movie = Movie.find(params[:movie_id])
   end
 
+  def edit
+    @review = Review.find(params[:movie_id])
+  end
+
+  def update
+    @review = Review.find(params[:movie_id])
+    if @review.update(review_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    review = Review.find(params[:movie_id])
+    review.destroy
+    redirect_to root_path
+  end
+
   private
   def review_params
     params.require(:review).permit(:title, :text, :rate).merge(user_id: current_user.id, movie_id: params[:movie_id])

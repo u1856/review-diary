@@ -8,5 +8,8 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :favorites, dependent: :destroy
 
-  
+  def already_favorited?(review)
+    self.favorites.exists?(review_id: review.id)
+  end
+
 end

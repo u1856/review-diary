@@ -20,6 +20,7 @@ class Movie < ApplicationRecord
       0.0
     end
   end
+  
 
 
   #with_options if: :is_admin? do |admin|

@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :movies
   has_many :reviews, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :favorited_reviews, through: :favorites, source: :review
 
-  
 end

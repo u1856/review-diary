@@ -1,14 +1,14 @@
 .second-header {
   width: 100%;
   min-width: 800px;
-  height: 130px;
+  height: 70px;
   background-color: #f5f5f5;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .second-logo {
-  width: 185px;
-  height: 49px;
+  width: 11vw;
+  margin-left: 20px;
 }

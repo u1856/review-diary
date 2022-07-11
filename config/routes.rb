@@ -6,8 +6,13 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   resources :movies do
-    resources :reviews, only: [:create, :new , :edit, :update, :destroy]
+    resources :reviews, only: [:create, :new , :edit, :update, :destroy] 
   end
+
+  resources :reviews do
+    resources :favorites, only: [:create, :destroy]
+  end
+
 
   namespace :admin do
     resources :movies, only: [:new, :create, :edit, :destroy]

@@ -2,12 +2,8 @@
 
 .movies-sell-contents {
   background-color: #f5f5f5;
-  font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 14px;
-}
-
-.movies-sell-header {
-  padding: 3vh 0;
 }
 
 .movies-sell-main{
@@ -17,7 +13,7 @@
   text-align:center;
   border-radius:6px;
   background-color:#FAFAFA;
-  font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-size: 14px;
 }
 
@@ -25,12 +21,9 @@
   border-radius:6px 6px 0px 0px;
   background-color:#FF6B6B;
   color:#FAFAFA;
-}
-
-h2 {
-  text-align:center;
-  padding:18px 0 18px 0;
+  padding: 18px 0;
   font-size: 1.4em;
+  text-align:center;
 }
 
 .indispensable {
@@ -50,12 +43,12 @@ h2 {
 }
 
 .new-movie-title{
-  margin:5px 0 30px 0;
+  margin: 5px 0 30px 0;
 }
 
 .new-movie-summary{
-  height:180px;
-  margin:5px 0 30px 0;
+  height: 180px;
+  margin: 5px 0 30px 0;
 }
 
 .new-movie-title, .new-movie-summary {
@@ -63,8 +56,8 @@ h2 {
   padding: 15px 10px 10px;
   font-family: 'Source Sans Pro',arial,sans-serif;
   border: 1px solid #cecece;
-  background: #d7d7d7;
-  color:#FAFAFA;
+  background: #FFF;
+  color: #222222;
   border-radius: 5px;
   background-clip: padding-box;
   box-sizing: border-box;
@@ -86,7 +79,7 @@ h2 {
 }
 
 .click-upload {
-  margin: 15px 0;
+  margin-bottom: 15px;
   min-width: 250px;
 }
 
@@ -100,7 +93,7 @@ h2 {
   margin: 10px 0 50px 0;
 }
 
-/* 作品投稿ボタン */
+/* 映画投稿ボタン */
 .new-movie-submit-contents {
   width: 100%;
   text-align: center;
@@ -129,11 +122,10 @@ div{
   padding: 12px 45px;
   text-decoration: none;
   border-radius: 5px;
-  border: 1px solid #aaa;
-  
+  border: 1px solid #aaa; 
 }
 
-/* /作品投稿ボタン */
+/* /映画投稿ボタン */
 
 .movies-sell-footer {
   background-color: #f5f5f5;

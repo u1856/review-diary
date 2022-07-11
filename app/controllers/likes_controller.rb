@@ -4,10 +4,7 @@ class LikesController < ApplicationController
   def create
     @movie = Movie.find(params[:movie_id])
     @like = @movie.likes.new(user_id: current_user.id)
-    if @like.save
-    else
-      redirect_to request.referer
-    end
+    @like.save
   end
 
   def destroy

@@ -35,6 +35,12 @@
       <%# 星評価の平均点 %>
     </div>
 
+    <%# お気に入りボタン %>
+    <span id="like_button_<%= @movie.id %>">
+      <%= render "likes/like", movie: @movie %>
+    </span>
+    <%# お気に入りボタン %>
+
     <%#<% if user_signed_in? && @item.destination.nil? %>
       <%#<% if current_user.id == @item.user_id %>
       <%#<%= link_to "商品の編集", edit_item_path(@item.id), method: :get, class: "item-red-btn" %>

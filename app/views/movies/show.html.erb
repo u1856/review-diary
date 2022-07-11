@@ -82,18 +82,16 @@
           </p>
 
           <%# いいねボタン %>
-          <% if current_user.already_favorited?(review) %>
-            <%= link_to movie_review_favorites_path(@movie, review), method: :delete do %>
-              <i class="fas fa-heart like-btn"></i>
+          <% if review.favorited?(current_user) %>
+            <%= link_to review_favorite_path(review), method: :delete do %>
+            <span style="color:red;">❤︎</span>
             <% end %>
-              <%= review.favorites.count %>
-            <% else %>
-              <%= link_to movie_review_favorites_path(@movie, review), method: :post do %>
-              <i class="far fa-heart unlike-btn"></i>
+          <% else %>
+            <%= link_to review_favorites_path(review), method: :post do %>
+            <span>❤︎</span>
             <% end %>
-              <%= review.favorites.count %>
-            <% end %>
-            <%# /いいねボタン %>
+          <% end %>
+          <%# /いいねボタン %>
 
         </div>
       <% end %>

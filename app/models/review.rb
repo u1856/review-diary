@@ -5,5 +5,9 @@ class Review < ApplicationRecord
   has_many :favorited_users, through: :favorites, source: :user
 
   validates :rate, presence: true
+
+  def favorited?(user)
+    favorites.where(user_id: user.id).exists?
+ end
   
 end

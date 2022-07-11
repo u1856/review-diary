@@ -4,12 +4,13 @@ a {
 
 .main {
   background: #f8f8f8;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
   width: 100vw;
-  background-image: image-url('top-img-1.jpeg');
+  background-image: image-url('top-img-6.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -30,20 +31,6 @@ a {
 .service-explain {
   font-size: 2.5vh;
   line-height: 40px;
-}
-
-.store-btn {
-  display: flex;
-  margin-top: 24px;
-}
-
-.apple-btn {
-  margin-right: 1vw;
-  height: 9vh;
-}
-
-.google-btn {
-  height: 9vh;
 }
 
 /* //画面上部の「人生を変えるフリマアプリ」帯部分 */
@@ -121,35 +108,6 @@ a {
 
 /* //FURIMAが選ばれる3つの理由部分 */
 
-
-/* 画面中央の「会員数日本一位」帯部分*/
-.ad-contents {
-  width: 100vw;
-  background-image: image-url('furima-header02.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 5vh 15vw;
-  color: #fff;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
-}
-
-.ad-title {
-  font-size: 5vh;
-  margin-bottom: 2vh;
-}
-
-.ad-explain {
-  font-size: 2.5vh;
-  line-height: 30px;
-}
-
-/* //画面中央の「会員数日本一位」帯部分 */
-
 /* FURIMAの特徴 */
 .feature-contents {
   padding: 5vh 15vw;
@@ -200,9 +158,9 @@ a {
 
 /* //FURIMAの特徴 */
 
-/* 商品一覧 */
+/* 映画一覧 */
 
-.item-contents {
+.movie-contents {
   background-color: #FFF;
   display: flex;
   flex-direction: column;
@@ -210,23 +168,35 @@ a {
   padding: 10vh 0;
 }
 
-.item-contents>.title {
-  font-size: 5vh;
+.movie-contents>.title {
+  font-size: 4.5vh;
   line-height: 1.4;
-  font-weight: bold;
+  color: #FF6B6B;
 }
 
-.item-lists {
+.movie-img-hover {
+  transition: all 0.2s;
+}
+
+.movie-img-hover:hover{
+  transform: translateY(-20px);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.movie-lists {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 30px;
 }
 
-.item-lists>.list {
+.movie-lists>.list {
   width: 37vh;
   padding: 1vw;
   background-color: #FFF;
+  margin-left: 20px;
 }
 
 
@@ -234,34 +204,19 @@ a {
   position: relative;
 }
 
-.review-img {
+.top-movie-img {
   width: 33vh;
   height: 43vh;
+  margin-bottom: 10px;
 }
 
-.sold-out {
-  position: absolute;
-  top: 40%;
-  width: 100%;
-  text-align: center;
-  background-color: crimson;
-  transform: skewY(-10deg);
-}
-
-.sold-out>span {
-  color: #FFF;
-  font-size: 45px;
-  font: bold;
-}
-
-
-.item-info {
+.movie-info {
   background-color: #FFF;
   color: black;
   padding: 1vw;
 }
 
-.item-name {
+.movie-name {
   font-size: 2.5vh;
 }
 

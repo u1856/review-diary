@@ -34,10 +34,12 @@ ActiveRecord::Schema.define(version: 2022_07_08_123242) do
   end
 
   create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "review_id"
+    t.bigint "user_id", null: false
+    t.bigint "review_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["review_id"], name: "index_favorites_on_review_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -75,5 +77,7 @@ ActiveRecord::Schema.define(version: 2022_07_08_123242) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "favorites", "reviews"
+  add_foreign_key "favorites", "users"
   add_foreign_key "movies", "users"
 end

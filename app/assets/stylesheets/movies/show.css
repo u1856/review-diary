@@ -1,122 +1,75 @@
 /* 商品の概要 */
 
-.review-show {
-  background-color: #f8f8f8;
+.movie-show {
+  background-color: #FFF;
   width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 5vh 0;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-.item-box {
+.movie-box {
   background-color: #FFF;
   width: 70vw;
   min-width: 1200px;
   padding: 10vh 0vh 20vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.item-box>.name {
-  text-align: center;
-  font-weight: bold;
-  font-size: 25px;
-}
-
-.review-img {
+.show-movie-img {
   width: 70vw;
-  margin-left: 0;
+  margin-left: 10vh;
 }
 
-.item-box-img {
+.movie-box-img {
   height: 50vh;
-  width: 23vw;
+  /* width: 24vw;*/
   min-height: 500px;
   background-color: rgb(205, 202, 202);
   object-fit: contain;
 }
 
-.item-price-box {
-  margin: 25px 0px;
+.summary-box {
+  margin: 50px 0px;
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 50vw;
 }
 
-.item-price-box>.item-price {
-  font-size: 4vh;
-  font-weight: bold;
+.movie-img-content{
+  text-align: left;
+  float: left;
 }
 
-.item-price-box>.item-postage {
+.summary-box>.summary {
+  font-size: 2vh;
+}
+
+.summary-box>.category {
   font-size: 16px;
+  margin-top: 40px;
 }
 
-.item-explain-box {
+.summary-box>.summary{
+  width: 70vh;
+}
+
+.movie-title-box {
   font-size: 18px;
   margin: 40px 0px;
   overflow-wrap: anywhere;
 }
 
-.detail-table {
-  margin-bottom: 30px;
-  width: 50%;
+.show-box>.movie-title-box {
+  font-size: 35px;
 }
 
-.detail-item {
-  width: 20%;
-  background-color: #eee;
-  border: 1px solid #dedede;
-  font-size: 14px;
-  text-align: center;
-}
-
-.detail-value {
-  width: 80%;
-  padding: 20px;
-  border: 1px solid #dedede;
-  font-size: 14px;
-}
-
-.option {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-}
-
-.favorite-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-  color: rgb(249, 75, 0);
-  border: 2px solid #ffb340;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-}
-
-.favorite-star-icon {
-  margin-right: 5px;
-}
-
-.report-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-
-  padding: 1vh 0;
-  color: black;
-  border: 2px solid #2d2d2d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.report-flag-icon {
-  margin-right: 5px;
+.show-star-rating{
+  margin-left: 700px;
 }
 
 
@@ -181,25 +134,28 @@
 }
 
 /* レビューを投稿するボタン */
+
 .purchase-btn-review{
-  background-image: linear-gradient(135deg, #008aff, #86d472);
+  background-color: #FF6B6B;
   border-radius: 6px;
   box-sizing: border-box;
   color: #ffffff;
-  display: block;
-  height: 50px;
-  font-size: 1.4em;
-  font-weight: 600;
-  padding: 4px;
-  margin-top: 30px;
+  height: 70px;
+  font-size: 1.7em;
+  padding: 25px 100px;
 }
 
 /* レビューの一覧 */
+#reviews{
+margin-top: 100px;
+}
+
 .star-rating {
   position: relative;
   width: 5em;
   height: 1em;
   font-size: 25px;
+  display: flex;
 }
 
 .star-rating-front {
@@ -212,7 +168,8 @@
 }
 
 .star-rating-score{
-  margin-left: 150px;
+  margin: 3px 0 0 25px;
+  font-size: 20px;
 }
 
 .star-rating-back {
@@ -236,18 +193,17 @@
 
 /* いいねボタン */
 
+.like-link {
+  text-decoration: none;
+}
+
 .like-btn {
-  width: 25px;
-  height: 30px;
-  font-size: 25px;
-  color: #808080; 
-  margin-left: 20px;
-  }
- 
- .unlike-btn {
-  width: 25px;
-  height: 30px;
-  font-size: 25px;
+  font-size: 1em;
+  color: #808080;
+}
+
+.unlike-btn {
+  font-size: 1em;
   color: #e54747;
-  margin-left: 20px;
-  }
+}
+

@@ -1,25 +1,38 @@
-<%= render "shared/header" %>
+<%= render "shared/second-header" %>
 
 <%# 映画の概要 %>
-<div class="review-show">
-  <div class="item-box">
-    <h2 class="name">
-      <%= @movie.title %>
-    </h2>
+<div class="movie-show">
+  <div class="movie-box">
 
-    <div class="review-img">
-      <div class="item-img-content">
-        <%= image_tag @movie.image, class:"item-box-img" %>
+    <div class="show-box">
+      <div class="show-movie-img">
+        <div class="movie-img-content">
+          <%= image_tag @movie.image, class:"movie-box-img" %>
+        </div>
       </div>
-    </div>
 
-    <div class="item-price-box">
-      <span class="item-price">
-        <%= @movie.summary %>
+      <span class="movie-title-box">
+        <%= @movie.title %>
       </span>
-      <span class="item-postage">
-        <%= @movie.category.name %>
-      </span>
+
+      <div class="summary-box">
+        <span class="summary">
+          <%= @movie.summary %>
+        </span>
+
+        <span class="category">
+          <div class="category-line">カテゴリー：<%= @movie.category.name %></div>
+        </span>
+      </div>
+      <%# 星評価の平均点 %>
+      <div class="show-star-rating">
+        <div class="star-rating mb-2">
+          <div class="star-rating-front" style="width: <%= @movie.review_rate_percentage %>%">★★★★★</div>
+          <div class="star-rating-back">★★★★★</div>
+          <div class="star-rating-score"><%= @movie.avg_rate %></div>
+        </div>
+      </div>
+      <%# 星評価の平均点 %>
     </div>
 
     <%#<% if user_signed_in? && @item.destination.nil? %>
@@ -32,38 +45,8 @@
       <%#<% end %>
     <%#<% end %>
 
-
-    <div class="item-explain-box">
-      <span><%= @movie.title %></span>
-    </div>
-    <table class="detail-table">
-      <tbody>
-        <tr>
-          <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= @movie.category.name %></td>
-        </tr>
-        <tr>
-      </tbody>
-    </table>
-    <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
-      </div>
-      <div class="report-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な商品の通報</span>
-      </div>
-    </div>
   </div>
   <%# /映画の概要 %>
-
-   <%# 星評価の平均点 %>
-    <div class="star-rating mb-2">
-      <div class="star-rating-front" style="width: <%= @movie.review_rate_percentage %>%">★★★★★</div>
-       <div class="star-rating-score"><%= @movie.avg_rate %>点</div>
-    </div>
-   <%# 星評価の平均点 %>
 
   <%# レビュー %>
 
@@ -81,19 +64,18 @@
     <div id="reviews">
       
    
-      <h4>＜レビュー＞</h4>（<%= @movie.reviews.count %>件のレビュー）
+      <h4>＜みんなのレビュー＞</h4>（<%= @movie.reviews.count %>件のレビュー）
       <% @movie.reviews.each do |review| %>
         <div class="review">
           <p>
-            <strong><%= link_to review.user.name, "/users/#{review.user_id}" %>：</strong>
             <%= review.title %>
-            <%= review.text %>
-            <%= review.rate %> 
+            <p><%= review.text %></p>
             <div class="star-rating mb-2">
               <div class="star-rating-front" style="width: <%= review.rate*100/5 %>%">★★★★★</div>
-              <div class="star-rating-back">★★★★★</div> <%= review.rate %>点
-              
+              <div class="star-rating-back">★★★★★</div>
+              <div class="star-rating-score"><%= review.rate %></div>
             </div>
+            <strong><%= link_to review.user.name, "/users/#{review.user_id}" %>さん</strong>
             <div class="average-score-display ml-3 pt-2">
              
             </div>   
@@ -101,7 +83,7 @@
 
           <%# いいねボタン %>
           <% if current_user.already_favorited?(review) %>
-            <%= link_to movie_review_favorite_path(@movie, review), method: :delete do %>
+            <%= link_to movie_review_favorites_path(@movie, review), method: :delete do %>
               <i class="fas fa-heart like-btn"></i>
             <% end %>
               <%= review.favorites.count %>
@@ -123,11 +105,5 @@
   <a href="#" class="another-item"><%= @movie.category.name %>映画をもっと見る</a>
 
 </div>
-<% if user_signed_in? && current_user.id %>
-  <%= link_to(new_movie_path, class: 'purchase-btn') do %>
-    <span class='purchase-btn-text'>投稿する</span>
-    <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-  <% end %>
-<% end %>
 
 <%= render "shared/footer" %>

@@ -1,3 +1,4 @@
+<%= render "shared/second-header" %>
 
 <div class="new-review-container">
 
@@ -37,16 +38,16 @@
           タイトル
           <span class="indispensable">必須</span>
           </div>
-          <%= form.text_area :title, placeholder: "タイトル", rows: "1", class: "new-review-title" %>
+          <%= form.text_area :title, rows: "1", class: "new-review-title" %>
 
            <div class="weight-bold-text">
           レビュー
           <span class="indispensable">必須</span>
           </div>
-          <%= form.text_area :text, placeholder: "レビューする", rows: "5", class: "new-review-text" %>
+          <%= form.text_area :text, rows: "5", class: "new-review-text" %>
 
           <%= form.submit "投稿する", class: "new-review-submit" %>
-          <%= link_to 'もどる', root_path, class:"back-btn" %>
+          <p><%= link_to 'もどる', root_path, class:"back-btn" %></p>
 
         <% end %>
       </div>
@@ -54,3 +55,5 @@
 </div>
 
 <%= javascript_include_tag 'reviews.js' %>
+
+<%= render "shared/footer" %>

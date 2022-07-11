@@ -1,23 +1,17 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header'>
-  <div class='search-bar-contents'>
-    <%= link_to image_tag("top-logo-1.png", class:"app-icon"), "/" %>
-    <form class="search-form" action="#">
-      <input class='input-box' placeholder='キーワードから探す'>
-      <button class="search-button">
-        <%= image_tag "search.png", class:"search-icon" %>
-      </button>
-    </form>
+  <div class= 'top-logo'>
+    <%= link_to image_tag("top-logo-4.png", class:"app-icon"), "/" %>
   </div>
   <div class='nav'>
     <ul class='lists-right'>
       <% if user_signed_in? && current_user.admin? %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        <%= "#{current_user.name}としてログイン中です"%>
+        <li><%= link_to '映画を投稿する', new_admin_movie_path, class: 'movie-post'%></li> 
+        <li><%= "#{current_user.name}"%></li> 
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li> 
       <% elsif user_signed_in? %>
-        <%= link_to "マイページ", "/users/#{current_user.id}" %>
-        <li><%= link_to current_user.name, "#", class: "user-name"%> </li> 
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li> 
+        <li><%= link_to current_user.name, "/users/#{current_user.id}", class: "user-name" %></li> 
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %> </li> 
        <% else %>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
         <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>

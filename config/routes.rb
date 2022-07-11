@@ -7,9 +7,11 @@ Rails.application.routes.draw do
 
   resources :movies do
     resources :reviews, only: [:create, :new , :edit, :update, :destroy] do
-      resources :favorites, only: [:create, :destroy]
+      resource :favorites, only: [:create, :destroy]
     end
   end
+
+
 
   namespace :admin do
     resources :movies, only: [:new, :create, :edit, :destroy]

@@ -1,8 +1,6 @@
-<div class="movies-sell-contents">
-  <header class="movies-sell-header">
-    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+<%= render "shared/second-header" %>
 
-  </header>
+<div class="movies-sell-contents">
   <div class="movies-sell-main">
     <h2 class="movies-sell-title">作品の情報を入力</h2>
     <%= form_with model: [:admin, @movie], local: true do |f| %>
@@ -29,13 +27,13 @@
         映画タイトル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :title, class:"new-movie-title", id:"new-movie-title", placeholder:"映画タイトル", maxlength:"40" %>
+      <%= f.text_area :title, class:"new-movie-title", id:"new-movie-title", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
           概要
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :summary, class:"new-movie-summary", id:"new-movie-summary", placeholder:"映画の概要（必須 1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :summary, class:"new-movie-summary", id:"new-movie-summary",rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
     <%# /映画タイトルと概要 %>
@@ -65,11 +63,11 @@
     <ul class="menu">
       <li><a href="#">プライバシーポリシー</a></li>
       <li><a href="#">Review Diary利用規約</a></li>
-      <li><a href="#">特定商取引に関する表記</a></li>
+      <li><a href="#">お問い合わせ</a></li>
     </ul>
-    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+  
     <p class="inc">
-      ©︎Review Diary,Inc.
+      ©︎ReviewDiary,Inc.
     </p>
   </footer>
 </div>

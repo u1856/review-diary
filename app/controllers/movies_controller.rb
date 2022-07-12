@@ -11,10 +11,6 @@ class MoviesController < ApplicationController
     @reviews = @movie.reviews
   end
 
-  def edit
-    @movie = Movie.find(params[:id])
-  end
-
   private 
   
   def set_movie

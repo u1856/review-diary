@@ -18,8 +18,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :movies, only: [:new, :create, :edit, :destroy]
+    resources :movies, only: [:new, :create, :edit, :update, :destroy]
   end
   
-
 end

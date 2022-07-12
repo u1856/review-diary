@@ -25,6 +25,7 @@
 }
 
 .movie-box-img {
+  width: 43vh;
   height: 50vh;
   min-height: 500px;
   background-color: rgb(205, 202, 202);

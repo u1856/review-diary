@@ -25,15 +25,19 @@
         </span>
       </div>
       <%# 星評価の平均点 %>
-      <div class="show-star-rating">
-        <div class="star-rating mb-2">
+        <div class="show-star-rating mb-2">
           <div class="star-rating-front" style="width: <%= @movie.review_rate_percentage %>%">★★★★★</div>
           <div class="star-rating-back">★★★★★</div>
-          <div class="star-rating-score"><%= @movie.avg_rate %></div>
+          <div class="show-star-rating-score"><%= @movie.avg_rate %></div>
         </div>
-      </div>
       <%# 星評価の平均点 %>
     </div>
+
+    <%# お気に入りボタン %>
+    <span id="like_button_<%= @movie.id %>">
+      <%= render "likes/like", movie: @movie %>
+    </span>
+    <%# お気に入りボタン %>
 
     <%#<% if user_signed_in? && @item.destination.nil? %>
       <%#<% if current_user.id == @item.user_id %>
@@ -64,44 +68,32 @@
     <div id="reviews">
       
    
-      <h4>＜みんなのレビュー＞</h4>（<%= @movie.reviews.count %>件のレビュー）
+      <h4>＜みんなのレビュー＞</h4>（<%= @movie.reviews.count %>件）
       <% @movie.reviews.each do |review| %>
         <div class="review">
           <p>
-            <%= review.title %>
-            <p><%= review.text %></p>
             <div class="star-rating mb-2">
               <div class="star-rating-front" style="width: <%= review.rate*100/5 %>%">★★★★★</div>
               <div class="star-rating-back">★★★★★</div>
               <div class="star-rating-score"><%= review.rate %></div>
             </div>
-            <strong><%= link_to review.user.name, "/users/#{review.user_id}" %>さん</strong>
-            <div class="average-score-display ml-3 pt-2">
-             
-            </div>   
+            <%= review.title %>
+            <p><%= review.text %></p>
+            <div class="review-user"><%= link_to review.user.name, "/users/#{review.user_id}" %>さんのレビュー</div>
           </p>
 
           <%# いいねボタン %>
-          <% if review.favorited?(current_user) %>
-            <%= link_to review_favorite_path(review), method: :delete do %>
-            <span style="color:red;">❤︎</span>
-            <% end %>
-          <% else %>
-            <%= link_to review_favorites_path(review), method: :post do %>
-            <span>❤︎</span>
-            <% end %>
-          <% end %>
+          <div id="favorite_button_<%= review.id %>">
+            <%= render "favorites/favorite", review: @review %>
+          </div>
           <%# /いいねボタン %>
 
         </div>
       <% end %>
     </div>
   </div>
- 
   <%# /レビュー %>
-
-  <a href="#" class="another-item"><%= @movie.category.name %>映画をもっと見る</a>
-
+  
 </div>
 
 <%= render "shared/footer" %>

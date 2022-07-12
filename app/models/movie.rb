@@ -3,6 +3,7 @@ class Movie < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_many :reviews, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_one_attached :image
 
   def avg_rate
@@ -20,9 +21,11 @@ class Movie < ApplicationRecord
       0.0
     end
   end
+
+  def liked_by?(user)
+    likes.where(user_id: user).exists?
+  end
   
-
-
   #with_options if: :is_admin? do |admin|
     #admin.validates :movie, :summary, presence: true
     #admin.validates :category_id, numericality: { other_than: 1 , message: "can't be blank" } 

@@ -7,7 +7,7 @@ class Review < ApplicationRecord
   validates :rate, presence: true
 
   def favorited?(user)
-    favorites.where(user_id: user.id).exists?
- end
+    favorites.where(user_id: user).exists?
+  end
   
 end

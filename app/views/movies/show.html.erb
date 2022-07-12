@@ -88,15 +88,9 @@
           </p>
 
           <%# いいねボタン %>
-          <% if review.favorited?(current_user) %>
-            <%= link_to review_favorite_path(review), method: :delete do %>
-            <span style="color:red;">❤︎</span>
-            <% end %>
-          <% else %>
-            <%= link_to review_favorites_path(review), method: :post do %>
-            <span>❤︎</span>
-            <% end %>
-          <% end %>
+          <span id="favorite_button_<%= review.id %>">
+            <%= render "favorites/favorite", review: @review %>
+          </span>
           <%# /いいねボタン %>
 
         </div>

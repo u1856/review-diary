@@ -1,0 +1,9 @@
+<% if review.favorited?(current_user) %>
+  <%= link_to review_favorite_path(@movie, review), method: :delete, remote: true do %>
+   <span style="color:red;">❤︎</span>
+   <% end %>
+<% else %>
+  <%= link_to review_favorites_path(@movie,review), method: :post, remote: true do %>
+  <span>❤︎</span>
+  <% end %>
+<% end %>

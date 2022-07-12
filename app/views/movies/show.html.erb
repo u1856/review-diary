@@ -70,7 +70,7 @@
     <div id="reviews">
       
    
-      <h4>＜みんなのレビュー＞</h4>（<%= @movie.reviews.count %>件のレビュー）
+      <h4>＜みんなのレビュー＞</h4>（<%= @movie.reviews.count %>件）
       <% @movie.reviews.each do |review| %>
         <div class="review">
           <p>
@@ -103,11 +103,8 @@
       <% end %>
     </div>
   </div>
- 
   <%# /レビュー %>
-
-  <a href="#" class="another-item"><%= @movie.category.name %>映画をもっと見る</a>
-
+  
 </div>
 
 <%= render "shared/footer" %>

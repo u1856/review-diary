@@ -124,15 +124,6 @@
   color: #3CCACE;
 }
 
-.another-item {
-  display: block;
-  margin: 30px 0px 8px;
-  color: #3CCACE;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 23px;
-}
-
 /* レビューを投稿するボタン */
 
 .purchase-btn-review{
@@ -140,9 +131,9 @@
   border-radius: 6px;
   box-sizing: border-box;
   color: #ffffff;
-  height: 70px;
-  font-size: 1.7em;
-  padding: 25px 100px;
+  height: 60px;
+  font-size: 1.4em;
+  padding: 23px 100px;
 }
 
 /* レビューの一覧 */
@@ -154,7 +145,7 @@ margin-top: 100px;
   position: relative;
   width: 5em;
   height: 1em;
-  font-size: 25px;
+  font-size: 30px;
   display: flex;
 }
 
@@ -168,7 +159,7 @@ margin-top: 100px;
 }
 
 .star-rating-score{
-  margin: 3px 0 0 25px;
+  margin: 7px 0 0 25px;
   font-size: 20px;
 }
 
@@ -184,7 +175,10 @@ margin-top: 100px;
 }
 
 .review{
-  margin: 20px;
+  margin: 25px auto;
+  border: dashed 1px #FF6B6B;
+  border-radius: 10px;
+  width: 50vW;
 }
 
 .review p{

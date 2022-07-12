@@ -1,21 +1,29 @@
-.mypage-box{
+.my-page-contents{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.my-page-top{
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.my-page-box{
   padding: 0.5em 1em;
   margin: 2em 0;
-  font-weight: bold;
-  color: #FF6B6B;
+  color: black;
   background: #FFF;
-  border: solid 3px #FF6B6B;
+  border: solid 1px #FF6B6B;
   border-radius: 10px;
   width: 50%;
   margin: 25px auto;
-  
 }
 
-.mypage-box p{
+.my-page-box p{
   padding: 15px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-.mypage-review{
+.my-page-review{
   position: relative;
 }
 
@@ -51,7 +59,7 @@
   right: 400px;
 }
 
-.mypage-pull-down{
+.my-page-pull-down{
   display: block;
   padding: 0.4em 1.6em;
   font-size: 0.4em;
@@ -65,7 +73,7 @@
   width: 100px;
 }
 
-.mypage-pull-down:hover{
+.my-page-pull-down:hover{
   color: #fff;
   background: #999;
 }

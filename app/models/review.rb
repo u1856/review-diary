@@ -8,6 +8,6 @@ class Review < ApplicationRecord
 
   def favorited?(user)
     favorites.where(user_id: user).exists?
- end
+  end
   
 end

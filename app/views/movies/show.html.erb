@@ -25,13 +25,11 @@
         </span>
       </div>
       <%# 星評価の平均点 %>
-      <div class="show-star-rating">
-        <div class="star-rating mb-2">
+        <div class="show-star-rating mb-2">
           <div class="star-rating-front" style="width: <%= @movie.review_rate_percentage %>%">★★★★★</div>
           <div class="star-rating-back">★★★★★</div>
-          <div class="star-rating-score"><%= @movie.avg_rate %></div>
+          <div class="show-star-rating-score"><%= @movie.avg_rate %></div>
         </div>
-      </div>
       <%# 星評価の平均点 %>
     </div>
 
@@ -74,23 +72,20 @@
       <% @movie.reviews.each do |review| %>
         <div class="review">
           <p>
-            <%= review.title %>
-            <p><%= review.text %></p>
             <div class="star-rating mb-2">
               <div class="star-rating-front" style="width: <%= review.rate*100/5 %>%">★★★★★</div>
               <div class="star-rating-back">★★★★★</div>
               <div class="star-rating-score"><%= review.rate %></div>
             </div>
-            <strong><%= link_to review.user.name, "/users/#{review.user_id}" %>さん</strong>
-            <div class="average-score-display ml-3 pt-2">
-             
-            </div>   
+            <%= review.title %>
+            <p><%= review.text %></p>
+            <div class="review-user"><%= link_to review.user.name, "/users/#{review.user_id}" %>さんのレビュー</div>
           </p>
 
           <%# いいねボタン %>
-          <span id="favorite_button_<%= review.id %>">
+          <div id="favorite_button_<%= review.id %>">
             <%= render "favorites/favorite", review: @review %>
-          </span>
+          </div>
           <%# /いいねボタン %>
 
         </div>

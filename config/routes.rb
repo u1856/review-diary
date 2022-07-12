@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :reviews do
-    resources :favorites, only: [:create, :destroy]
+    resources :favorite, only: [:create, :destroy]
   end
 
   namespace :admin do

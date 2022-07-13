@@ -47,7 +47,7 @@
           <%= form.text_area :text, rows: "5", class: "new-review-text" %>
 
           <%= form.submit "投稿する", class: "new-review-submit" %>
-          <p><%= link_to 'もどる', root_path, class:"back-btn" %></p>
+          <p><%= link_to 'もどる', movie_path(@movie.id), class:"back-btn" %></p>
 
         <% end %>
       </div>

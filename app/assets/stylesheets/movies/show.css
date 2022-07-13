@@ -29,7 +29,7 @@
   height: 50vh;
   min-height: 500px;
   background-color: rgb(205, 202, 202);
-  object-fit: contain;
+  object-fit: scale-down;
 }
 
 .summary-box {
@@ -99,6 +99,25 @@
   margin-left: 20px;
   }
 
+/* 編集ボタン・削除ボタン */
+.movie-edit-btn{
+  width: 10%;
+  margin: 30px auto;
+  padding: 10px;
+  color: #FFF;
+  background-color: gray;
+  border-radius: 5px;
+}
+
+.movie-delete-btn{
+  width: 10%;
+  margin: 0 auto;
+  padding: 10px;
+  color: #FFF;
+  background-color: gray;
+  border-radius: 5px;
+}
+
 /* レビューを投稿するボタン */
 
 .purchase-btn-review{
@@ -109,6 +128,10 @@
   height: 60px;
   font-size: 1.4em;
   padding: 23px 100px;
+}
+
+.purchase-btn-review:hover{
+  opacity: 0.6;
 }
 
 /* レビューの一覧 */

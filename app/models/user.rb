@@ -9,5 +9,6 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorited_reviews, through: :favorites, source: :review
   has_many :likes, dependent: :destroy
+  has_many :events, dependent: :destroy
 
 end

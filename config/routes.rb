@@ -14,10 +14,10 @@ Rails.application.routes.draw do
   end
 
   resources :reviews do
-    resources :favorite, only: [:create, :destroy]
+    resources :favorites, only: [:create, :destroy]
   end
 
-  resources :events, only: [:index, :new] 
+  resources :events
 
   namespace :admin do
     resources :movies, only: [:new, :create, :edit, :update, :destroy]

@@ -1,0 +1,13 @@
+.event-form{
+  max-width:700px;
+  margin:80px auto;
+  text-align:center;
+  border-radius:6px;
+  background-color:#FAFAFA;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  height: 56vh;
+}
+
+.event-new-title,.event-new-time,.event-new-content{
+  margin:40px 0;
+}

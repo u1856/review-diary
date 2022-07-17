@@ -1,5 +1,21 @@
-<%= link_to 'イベント追加', new_event_path %>
+<%= render "shared/second-header" %>
 
-<%= month_calendar events: @events do |date, events| %>
-  <%= date.day %>
-<% end %>
+<div class="calendar-maim">
+
+  <%= month_calendar events: @events do |date, events| %>
+    <%= date.day %>
+
+      <% events.each do |event| %>
+      
+      <% if current_user.id == event.user_id %>
+      <div>
+        <%= link_to event.title,event_path(events) %>
+      </div>
+      <% end %>
+    <% end %>
+    
+  <% end %>
+
+  <div class="event-post"><%= link_to '予定を追加する', new_event_path %></div>
+
+</div>

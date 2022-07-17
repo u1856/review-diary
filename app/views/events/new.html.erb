@@ -1,25 +1,31 @@
-<h1>テスト</h1>
+<%= render "shared/second-header" %>
 
-<%= form_with(model: @event, local: true) do |form| %>
+<div class="event-new">
+  <div class="event-form">
+    <div class="head">
+      <h2>予定を入力</h2>
+    </div>
 
-  <div class="title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form_with(model: @event, local: true) do |form| %>
+
+      <div class="event-new-title">
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+      </div>
+
+        <div class="event-new-time">
+        <%= form.label :start_time %>
+        <%= form.datetime_select :start_time %>
+      </div>
+
+      <div class="event-new-content">
+        <%= form.label :content %>
+        <%= form.text_field :content %>
+      </div>
+
+      <%= form.submit "登録する", class: "new-review-submit" %>
+      <p><%= link_to 'もどる', events_path, class:"back-btn" %></p>
+
+    <% end %>
   </div>
-
-    <div class="time">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
-  </div>
-
-  <div class="content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-
-
-  <div class="submit">
-    <%= form.submit %>
-  </div>
-
-<% end %>
+</div>

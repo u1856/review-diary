@@ -14,7 +14,7 @@
   background-color: #FFF;
   width: 70vw;
   min-width: 1200px;
-  padding: 10vh 0 20vh;
+  padding: 10vh 0 18vh;
   display: flex;
   flex-direction: column;
 }
@@ -47,6 +47,7 @@
 
 .summary-box>.summary {
   font-size: 2vh;
+  text-align: left;
 }
 
 .summary-box>.category {
@@ -136,7 +137,7 @@
 
 /* レビューの一覧 */
 #reviews{
-margin-top: 100px;
+margin-top: 120px;
 }
 
 .star-rating {
@@ -184,10 +185,17 @@ margin-top: 100px;
 }
 
 .review{
-  margin: 25px 0 50px 0;
-  border: solid 1px #FF6B6B;
-  border-radius: 10px;
+  margin: 40px 0 60px 0;
+  border-radius: 30px;
   width: 50vW;
+  border-top: double 5px #4ec4d3;
+  border-bottom: double 5px #4ec4d3;
+  border-right: solid 1px #DDDDDD ;
+  border-left: solid 1px #DDDDDD ;
+}
+
+.show-review-title{
+font-weight: bold;
 }
 
 .review p{
@@ -197,15 +205,18 @@ margin-top: 100px;
 }
 
 .review-user{
-  text-align: left;
-  margin-left: 40px;
-  
+  font-weight: bold;
+}
+
+.review-time{
+  float: left;
+  margin: 8px 40px;
 }
 
 /* いいねボタン */
 .favorite-buttn{
   text-align: right;
-  margin: 0 30px 8px 0;
+  margin: 0 40px 15px 0;
 }
 
 .favorite-btn {
@@ -213,7 +224,7 @@ margin-top: 100px;
   height: 30px;
   font-size: 20px;
   color: #808080; 
-  margin-left: 20px;
+  margin-left: 200px;
   }
  
  .unfavorite-btn {
@@ -221,6 +232,6 @@ margin-top: 100px;
   height: 30px;
   font-size: 20px;
   color: #e54747;
-  margin-left: 20px;
+  margin-left: 200px;
   }
 

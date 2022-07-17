@@ -5,17 +5,19 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
-  resources :movies do
+  resources :movies, only: [:index, :show] do
     resources :reviews, only: [:create, :new , :edit, :update, :destroy] 
   end
 
-  resources :movies do
+  resources :movies, only: [:index, :show] do
     resource :likes, only: [:create, :destroy]
   end
 
   resources :reviews do
-    resources :favorite, only: [:create, :destroy]
+    resources :favorites, only: [:create, :destroy]
   end
+
+  resources :events
 
   namespace :admin do
     resources :movies, only: [:new, :create, :edit, :update, :destroy]

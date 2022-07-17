@@ -30,39 +30,39 @@
           <div class="star-rating-back">★★★★★</div>
           <div class="show-star-rating-score"><%= @movie.avg_rate %></div>
         </div>
-      <%# 星評価の平均点 %>
+      <%# /星評価の平均点 %>
     </div>
 
     <%# お気に入りボタン %>
     <span id="like_button_<%= @movie.id %>">
       <%= render "likes/like", movie: @movie %>
     </span>
-    <%# お気に入りボタン %>
+    <%# /お気に入りボタン %>
 
+    <%# 編集・削除ボタン %>
     <% if user_signed_in? && current_user.admin? %>
       <div class="movie-edit-btn"><%= link_to "編集", edit_admin_movie_path(@movie.id), method: :get, class: "movie-edit-btn" %></div>
       <%= link_to "削除", admin_movie_path(@movie.id), method: :delete, class:"movie-delete-btn" %>
     <% end %>
+    <%# 編集・削除ボタン %>
 
   </div>
   <%# /映画の概要 %>
 
-  <%# レビュー %>
+    <%# レビュー %>
 
-  <div class="review-container">
+    <div class="review-container">
 
-  <% if user_signed_in? %>
-    <%= link_to(new_movie_review_path(@movie.id), class: 'new-review-btn') do %>
-      <span class='purchase-btn-review'>レビューを投稿する</span>
+    <% if user_signed_in? %>
+      <%= link_to(new_movie_review_path(@movie.id), class: 'new-review-btn') do %>
+        <span class='purchase-btn-review'>レビューを投稿する</span>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ レビューの投稿には新規登録/ログインが必要です ※※※</p></strong>
     <% end %>
-   <% else %>
-    <strong><p>※※※ レビューの投稿には新規登録/ログインが必要です ※※※</p></strong>
-   <% end %>
-    
+      
 
     <div id="reviews">
-      
-   
       <h4>＜みんなのレビュー＞</h4>（<%= @movie.reviews.count %>件）
       <% @movie.reviews.each do |review| %>
         <div class="review">
@@ -70,17 +70,18 @@
             <div class="star-rating mb-2">
               <div class="star-rating-front" style="width: <%= review.rate*100/5 %>%">★★★★★</div>
               <div class="star-rating-back">★★★★★</div>
-              <div class="star-rating-score"><%= review.rate %></div>
+              <div class="star-rating-score"><%#<%= review.rate %></div>
             </div>
-            <%= review.title %>
+            <div class="show-review-title"><%= review.title %></div>
             <p><%= review.text %></p>
             <div class="review-user"><%= link_to review.user.name, "/users/#{review.user_id}" %>さんのレビュー</div>
+            <div class="review-time"><%= review.created_at.strftime('%Y/%m/%d %H:%M:%S') %></div>
           </p>
 
           <%# いいねボタン %>
-          <div id="favorite_button_<%= review.id %>">
-            <%= render "favorites/favorite", review: @review %>
-          </div>
+            <span id="favorite_button_<%= @review.id %>">
+              <%= render "favorites/favorite", review: review %>
+            </span>
           <%# /いいねボタン %>
 
         </div>

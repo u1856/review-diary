@@ -1,11 +1,11 @@
-<div class="favorite-buttn">
-<% if review.favorited?(current_user) %>
-  <%= link_to r review_favorite_path(@movie, review), method: :delete, remote: true do %>
- <i class="far fa-heart favorite-btn" ></i>
-   <% end %>
+<% if review.favorited_by?(current_user) %>
+  <%= link_to review_favorite_path(review), remote: true, method: :DELETE do %>
+   <i class="far fa-heart favorite-btn" aria-hidden="true" style="color: red;"></i>
+    <%= review.favorites.count %>いいね
+  <% end %>
 <% else %>
-  <%= link_to review_favorite_index_path(@movie,review), method: :post, remote: true do %>
-  <i class="fas fa-heart unfavorite-btn"></i>
+  <%= link_to review_favorites_path(review), remote: true, method: :POST do %>
+  <i class="fas fa-heart unfavorite-btn" aria-hidden="true"></i>
+  <%= review.favorites.count %>いいね
   <% end %>
 <% end %>
-</div>

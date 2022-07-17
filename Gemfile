@@ -61,3 +61,4 @@ gem 'bulma-rails'
 gem 'pry-rails'
 gem 'simple_calendar', '~> 2.0' 
 gem 'rails-i18n'
+gem "aws-sdk-s3", require: false

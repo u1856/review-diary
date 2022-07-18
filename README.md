@@ -33,7 +33,7 @@ https://review-diary-1856.herokuapp.com/
 ## 実装した機能についての画像やGIFおよびその説明
 
 #### 映画詳細ページ
-[![Image from Gyazo](https://i.gyazo.com/52b0354923d20ed14bbf676862bd71d5.gif)](https://gyazo.com/52b0354923d20ed14bbf676862bd71d5)
+[![demo from Gyazo](https://i.gyazo.com/2be5205c39ea039cd46d7af66a152b44.gif)](https://gyazo.com/2be5205c39ea039cd46d7af66a152b44)
 
 映画詳細ページにアクセスすると、映画のタイトルやあらすじ、レビューの一覧などを見ることができます。
 画面中央の「レビューを投稿する」ボタンをクリックするとレビュー投稿ページに遷移します。
@@ -42,6 +42,12 @@ https://review-diary-1856.herokuapp.com/
 [![Image from Gyazo](https://i.gyazo.com/48c2b502af68c987de2e70158773f5b0.png)](https://gyazo.com/48c2b502af68c987de2e70158773f5b0)
 
 レビュー投稿ページでは、映画に対する星評価(5段階)やレビューのタイトル、内容を入力することで投稿できます。
+
+#### 管理者機能
+[![Image from Gyazo](https://i.gyazo.com/725c7db5e2c905ad0c859fb67f488e16.png)](https://gyazo.com/725c7db5e2c905ad0c859fb67f488e16)
+
+管理者としてログインすると、映画情報投稿ページに遷移するリンクがヘッダーに表示されます。
+映画情報投稿ページにて映画の画像やタイトル、あらすじ、カテゴリーを入力すると投稿できます。
 
 ## データベース設計
 [![Image from Gyazo](https://i.gyazo.com/28e8fbce4cd97d908823fe3667e354f8.png)](https://gyazo.com/28e8fbce4cd97d908823fe3667e354f8)

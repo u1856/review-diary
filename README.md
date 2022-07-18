@@ -33,7 +33,7 @@ https://review-diary-1856.herokuapp.com/
 ## 実装した機能についての画像やGIFおよびその説明
 
 #### 映画詳細ページ
-[![demo from Gyazo](https://i.gyazo.com/2be5205c39ea039cd46d7af66a152b44.gif)](https://gyazo.com/2be5205c39ea039cd46d7af66a152b44)
+[![Image from Gyazo](https://i.gyazo.com/f3193cc9c2c578ca4f50dcd1698ef16e.jpg)](https://gyazo.com/f3193cc9c2c578ca4f50dcd1698ef16e)
 
 映画詳細ページにアクセスすると、映画のタイトルやあらすじ、レビューの一覧などを見ることができます。
 画面中央の「レビューを投稿する」ボタンをクリックするとレビュー投稿ページに遷移します。

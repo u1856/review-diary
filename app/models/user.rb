@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :events, dependent: :destroy
 
   #def favorited_by?(review_id)
-   # favorites.where(review_id: review_id).exists?
-  #end
+    #favorites.where(review_id: reviews).exists?
+   #end
 
 end

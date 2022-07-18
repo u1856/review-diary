@@ -1,1 +1,1 @@
-$("#favorite_button_<%= @revie.id %>").html("<%= j(render "favorites/favorite", review: @review) %>");
+$('#favorite_review_<%= params[:review_id] %>').html('<%= link_to "", review_favorite_path(review.id), method: :delete, remote:true, style: "color: red;", class: "far fa-heart favorite-btn"%><%= @review.favorites.size %>');

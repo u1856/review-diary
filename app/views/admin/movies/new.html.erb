@@ -3,6 +3,7 @@
 <div class="movies-sell-contents">
   <div class="movies-sell-main">
     <h2 class="movies-sell-title">作品の情報を入力</h2>
+    <div id="new_movie">
     <%= form_with model: [:admin, @movie], local: true do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -13,6 +14,7 @@
         作品画像
         <span class="indispensable">必須</span>
       </div>
+      <div id="previews"></div>
       <div class="click-upload">
         <p>
           クリックしてファイルをアップロード
@@ -58,6 +60,7 @@
     <%# /下部ボタン %>
   </div>
   <% end %>
+  </div>
 
   <footer class="movies-sell-footer">
     <ul class="menu">

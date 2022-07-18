@@ -196,6 +196,7 @@ margin-top: 120px;
 
 .show-review-title{
 font-weight: bold;
+padding-left: 200px;
 }
 
 .review p{
@@ -209,8 +210,8 @@ font-weight: bold;
 }
 
 .review-time{
-  float: left;
-  margin: 8px 40px;
+  float: right;
+  margin: 5px 30px 0 0;
 }
 
 /* いいねボタン */
@@ -221,17 +222,17 @@ font-weight: bold;
 
 .favorite-btn {
   width: 25px;
-  height: 30px;
+  height: 35px;
   font-size: 20px;
   color: #808080; 
-  margin-left: 200px;
+  margin-left: 600px;
   }
  
  .unfavorite-btn {
   width: 25px;
-  height: 30px;
+  height: 35px;
   font-size: 20px;
   color: #e54747;
-  margin-left: 200px;
+  margin-left: 600px;
   }
 

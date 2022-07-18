@@ -67,6 +67,7 @@
       <% @movie.reviews.each do |review| %>
         <div class="review">
           <p>
+            <div class="review-time"><%= review.created_at.strftime('%Y/%m/%d %H:%M:%S') %></div>
             <div class="star-rating mb-2">
               <div class="star-rating-front" style="width: <%= review.rate*100/5 %>%">★★★★★</div>
               <div class="star-rating-back">★★★★★</div>
@@ -75,13 +76,19 @@
             <div class="show-review-title"><%= review.title %></div>
             <p><%= review.text %></p>
             <div class="review-user"><%= link_to review.user.name, "/users/#{review.user_id}" %>さんのレビュー</div>
-            <div class="review-time"><%= review.created_at.strftime('%Y/%m/%d %H:%M:%S') %></div>
           </p>
 
           <%# いいねボタン %>
-            <span id="favorite_button_<%= @review.id %>">
-              <%= render "favorites/favorite", review: review %>
-            </span>
+          <% if user_signed_in? %>
+             <div id="favorite_review_<%= review.id %>">
+              <% if favorite = review.favorites.find_by(user_id: current_user.id) %>
+                <%= link_to "", review_favorite_path(review.id), method: :delete, remote:true, style: "color: red;", class: "far fa-heart favorite-btn"%>
+              <% else %>
+                <%= link_to "", review_favorites_path(review), method: :post, remote:true, class: "fas fa-heart unfavorite-btn" %>
+              <% end %>
+              <%= review.favorites.size %>
+            </div>
+          <% end %>
           <%# /いいねボタン %>
 
         </div>

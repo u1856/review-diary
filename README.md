@@ -9,8 +9,8 @@ review-diary
 https://review-diary-1856.herokuapp.com/
 
 ## テスト用アカウント
-- Basic認証パスワード：3333
 - Basic認証ID：admin
+- Basic認証パスワード：3333
 - メールアドレス：review1@t.com
 - パスワード：review1
 
@@ -54,6 +54,10 @@ https://review-diary-1856.herokuapp.com/
 
 管理者としてログインすると、映画情報投稿ページに遷移するリンクがヘッダーに表示されます。
 映画情報投稿ページにて映画の画像やタイトル、あらすじ、カテゴリーを入力すると投稿できます。
+
+## 実装予定の機能
+現在、カレンダー機能を実装中。
+今後は検索機能やアカウントのフォロー機能を実装予定。
 
 ## データベース設計
 [![Image from Gyazo](https://i.gyazo.com/28e8fbce4cd97d908823fe3667e354f8.png)](https://gyazo.com/28e8fbce4cd97d908823fe3667e354f8)

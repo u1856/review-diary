@@ -32,6 +32,12 @@ https://review-diary-1856.herokuapp.com/
 
 ## 実装した機能についての画像やGIFおよびその説明
 
+#### トップページ
+[![Image from Gyazo](https://i.gyazo.com/f88f1688c4ae31c9ecc4f101d907fe69.jpg)](https://gyazo.com/f88f1688c4ae31c9ecc4f101d907fe69)
+
+ログインしている状態の場合は、カレンダー・ユーザー名・ログアウトとヘッダーに表示されます。
+カレンダーをクリックするとカレンダーページに遷移、ユーザー名をクリックするとマイページに遷移します。
+
 #### 映画詳細ページ
 [![Image from Gyazo](https://i.gyazo.com/f3193cc9c2c578ca4f50dcd1698ef16e.jpg)](https://gyazo.com/f3193cc9c2c578ca4f50dcd1698ef16e)
 

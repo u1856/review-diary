@@ -1,17 +1,21 @@
 class FavoritesController < ApplicationController
   def create
-    @review = Review.find(params[:review_id])
-    favorite = @review.favorites.new(user_id: current_user.id)
+    favorite = Favorite.new(favorite_params)
     favorite.save
-    #flash[:success] = "favorited post"
-    #redirect_to request.referer
+    @review = Review.find(params[:review_id])
   end
 
   def destroy
-    @review = Review.find(params[:review_id])
-    favorite = current_user.favorites.find_by(review_id: @review.id)
-    favorite.destroy
-    #redirect_to request.referer
+    if favorite = Favorite.find_by(favorite_params)
+      favorite.destroy
+    end
+      @review = Review.find(params[:review_id])
+  end
+
+  private
+  def favorite_params
+    
+    { review_id: params[:review_id], user_id: current_user.id }
   end
 
 end

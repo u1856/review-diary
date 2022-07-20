@@ -1,0 +1,7 @@
+<%= render "shared/second-header" %>
+
+<div class="event-show">
+  <p><%= @event.title %></p>
+  <p><%= @event.content %></p>
+  <p><%= @event.start_time.strftime('%Y/%m/%d %H:%M:%S') %></p>
+</div>

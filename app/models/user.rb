@@ -6,13 +6,13 @@ class User < ApplicationRecord
 
   has_many :movies, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  has_many :favorites#, dependent: :destroy
-  #has_many :favorite_reviews, through: :favorites, source: :review
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_reviews, through: :favorites, source: :review
   has_many :likes, dependent: :destroy
   has_many :events, dependent: :destroy
 
   #def favorited_by?(review_id)
     #favorites.where(review_id: reviews).exists?
-   #end
+  #end
 
 end

@@ -1,0 +1,24 @@
+<%= render "shared/second-header" %>
+
+<div class="event-show">
+  <div class="event-show-main">
+    <div class="head">
+    <h2><%= @event.start_time.strftime('%Y年%m月%d日') %>の予定</h2>
+    </div>
+    <div class="event-show-title">
+      Title
+      <p><%= @event.title %></p>
+    </div>
+    <div class="event-show-content">
+      Content
+      <p><%= @event.content %></p>
+    </div>
+    <div class="event-show-time">
+      Start time
+      <p><%= @event.start_time.strftime('%Y年%m月%d日 %H:%M') %></p>
+    </div>
+
+      <%#<%= link_to "編集", "#", method: :get, class: "event-edit-btn" %>
+      <%#<%= link_to "削除", "#", method: :delete, class:"event-delete-btn" %>
+  </div>
+</div>

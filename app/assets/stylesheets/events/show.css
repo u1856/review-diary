@@ -1,0 +1,21 @@
+.event-show{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.event-show-main{
+  max-width:700px;
+  margin: 80px auto;
+  text-align:center;
+  border-radius:6px;
+  height: 56vh;
+  border: 1px solid #FF6B6B;
+}
+
+.event-show-title, .event-show-content, .event-show-time{
+  margin: 35px 0;
+}
+
+.event-show-title>p, .event-show-content>p, .event-show-time>p{
+  margin: 5px 0;
+  text-decoration: underline #FF6B6B;
+}

@@ -1,0 +1,30 @@
+<%= render "shared/second-header" %>
+
+<div class="event-show">
+  <div class="event-show-main">
+    <div class="head">
+    <h2>予定を編集</h2>
+    </div>
+<%= form_with(model: @event, local: true) do |form| %>
+
+      <div class="event-new-title">
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+      </div>
+
+        <div class="event-new-time">
+        <%= form.label :start_time %>
+        <%= form.datetime_select :start_time %>
+      </div>
+
+      <div class="event-new-content">
+        <%= form.label :content %>
+        <%= form.text_field :content %>
+      </div>
+
+      <%= form.submit "編集する", class: "new-review-submit" %>
+      <p><%= link_to 'もどる', event_path, class:"back-btn" %></p>
+
+    <% end %>
+  </div>
+</div>

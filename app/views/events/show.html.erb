@@ -18,7 +18,7 @@
       <p><%= @event.start_time.strftime('%Y年%m月%d日 %H:%M') %></p>
     </div>
 
-      <%= link_to "編集", edit_event_path(@event.id), method: :get, class: "event-edit-btn" %>
-      <%#<%= link_to "削除", "#", method: :delete, class:"event-delete-btn" %>
+      <%= link_to "編集", edit_event_path(@event.id), method: :get, class: "event-show-btn" %>
+      <%= link_to "削除", event_path(@event.id), method: :delete, class: "event-show-btn" %>
   </div>
 </div>

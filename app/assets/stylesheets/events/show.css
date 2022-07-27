@@ -21,9 +21,10 @@
   text-decoration: underline #FF6B6B;
 }
 
-.event-edit-btn{
+.event-show-btn{
   padding: 8px 18px;
   color: #FFF;
   background-color: gray;
   border-radius: 5px;
+  margin: 10px;
 }

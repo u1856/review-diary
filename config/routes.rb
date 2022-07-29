@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   resources :movies do
     resource :likes, only: [:create, :destroy]
+    collection do
+      get 'search'
+    end
   end
 
   resources :reviews do

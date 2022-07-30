@@ -11,6 +11,11 @@ class MoviesController < ApplicationController
     @reviews = @movie.reviews
   end
 
+  def search
+    @q = Movie.ransack(params[:q])
+    @movies = @q.result
+  end
+
   private 
   
   def set_movie

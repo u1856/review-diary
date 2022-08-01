@@ -3,9 +3,7 @@
   <div class= 'top-logo'>
     <%= link_to image_tag("top-logo-4.png", class:"app-icon"), "/" %>
   </div>
-  <div class= 'top-searth'>
-    <%= link_to '商品検索', search_movies_path%>
-  </div>
+
   <div class='nav'>
     <ul class='lists-right'>
       <% if user_signed_in? && current_user.admin? %>
@@ -13,10 +11,12 @@
         <li><%= "#{current_user.name}"%></li> 
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li> 
       <% elsif user_signed_in? %>
+        <li><%= link_to '商品検索', search_movies_path%></li>
         <li><%= link_to 'カレンダー', events_path, class: 'nav-calendar'%></li> 
         <li><%= link_to current_user.name, "/users/#{current_user.id}", class: "user-name" %></li> 
         <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %> </li> 
        <% else %>
+        <li><%= link_to '映画を検索する', search_movies_path, class: "top-searth" %></li>
         <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
         <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
       <% end %>

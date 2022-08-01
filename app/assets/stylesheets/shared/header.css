@@ -74,7 +74,7 @@
   transform: scale(1, 1);
 }
 
-.user-name, .logout, .movie-post, .nav-calendar {
+.user-name, .logout, .movie-post, .nav-calendar, .top-searth {
   text-decoration: none;
   color: white;
 }

@@ -3,6 +3,9 @@
   <div class= 'top-logo'>
     <%= link_to image_tag("top-logo-4.png", class:"app-icon"), "/" %>
   </div>
+  <div class= 'top-searth'>
+    <%= link_to '商品検索', search_movies_path%>
+  </div>
   <div class='nav'>
     <ul class='lists-right'>
       <% if user_signed_in? && current_user.admin? %>

@@ -1,1 +1,9 @@
 <h1>検索ページ</h1>
+
+  <%= search_form_for @q, url: search_movies_path, html: {id: "search-form"} do |f| %>
+    <div class="search-field">
+      <%= f.label :title, "映画のタイトルを入力" %><br>
+      <%= f.search_field :title %>
+    </div>
+    <%= f.submit '検索' %>
+  <% end %>

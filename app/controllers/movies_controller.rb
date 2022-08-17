@@ -5,15 +5,15 @@ class MoviesController < ApplicationController
     @movies = Movie.order("created_at DESC")
   end
 
+    def search
+    @q = Movie.ransack(params[:q])
+    @movies = @q.result
+  end
+
   def show
     @review = Review.new
     @reviews = @movie.reviews.includes(:user)
     @reviews = @movie.reviews
-  end
-
-  def search
-    @q = Movie.ransack(params[:q])
-    @movies = @q.result
   end
 
   private 

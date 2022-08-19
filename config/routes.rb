@@ -5,22 +5,12 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
-  resources :movies do
-    collection do
-      get 'search'
-    end
-  end
-
   resources :movies, only: [:index, :show] do
     resources :reviews, only: [:create, :new , :edit, :update, :destroy] 
   end
 
   resources :movies do
     resource :likes, only: [:create, :destroy] 
-  end
-
-  resources :movies do
-    resource :likes, only: [:create, :destroy]
   end
 
   resources :reviews do

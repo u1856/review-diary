@@ -3,9 +3,6 @@ class MoviesController < ApplicationController
 
   def index
     @movies = Movie.order("created_at DESC")
-  end
-
-    def search
     @q = Movie.ransack(params[:q])
     @movies = @q.result
   end

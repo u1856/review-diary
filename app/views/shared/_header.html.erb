@@ -4,6 +4,15 @@
     <%= link_to image_tag("top-logo-4.png", class:"app-icon"), "/" %>
   </div>
 
+  <%# 検索フォーム %>
+  <div class= 'search-form'>
+    <%= search_form_for @q do |f| %>
+      <%= f.search_field :title %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <%# /検索フォーム %>
+
   <div class='nav'>
     <ul class='lists-right'>
       <% if user_signed_in? && current_user.admin? %>

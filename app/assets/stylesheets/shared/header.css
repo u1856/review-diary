@@ -19,6 +19,13 @@
   width: 4vw;
 }
 
+.search-form{
+  width: 400px;
+  display: flex;
+  align-items: center;
+  margin-left: 35px;
+}
+
 .nav {
   font-size: 18px;
   display: flex;
